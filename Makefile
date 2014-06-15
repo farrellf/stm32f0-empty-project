@@ -43,9 +43,9 @@ install:
 debug_server:
 	openocd -f config_openocd_stm32f0.cfg
 
-# "make debug_nemivier" to debug using the Nemivier GUI.
-# "make debug_server" must be called first and left running while using Nemivier.
-debug_nemivier:
+# "make debug_nemiver" to debug using the Nemiver GUI.
+# "make debug_server" must be called first and left running while using Nemiver.
+debug_nemiver:
 	arm-none-eabi-gdb --batch --command=config_gdb.cfg $(EXECUTABLE)
 	nemiver --remote=localhost:3333 --gdb-binary=/home/farrellf/stm32/gcc-arm-none-eabi-4_8-2013q4/bin/arm-none-eabi-gdb $(EXECUTABLE)
 
